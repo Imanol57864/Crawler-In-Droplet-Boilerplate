@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "name": "droplet_crawler",
+  "version": "1.0.0",
+  "main": "itemdetail_crawler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}

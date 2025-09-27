@@ -1,0 +1,64 @@
+# better to have 17,000 json files and then use a python to mix them up, than having a ton of file checkpoints
+
+(password)
+
+ssh root@(droplet_ip)
+
+# Actualizar paquetes
+sudo apt update 
+sudo apt upgrade -y
+sudo apt install -y python3 python3-pip python3-venv git
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs
+node -v
+npm -v
+npm init -y
+npm install apify fs puppeteer puppeteer-extra puppeteer-extra-plugin-stealth
+
+--- CHROMIUM --- 
+sudo apt update
+sudo apt install -y \
+  ca-certificates \
+  fonts-liberation \
+  libatk-bridge2.0-0 \
+  libatk1.0-0 \
+  libc6 \
+  libcairo2 \
+  libcups2 \
+  libdbus-1-3 \
+  libdrm2 \
+  libexpat1 \
+  libfontconfig1 \
+  libgcc1 \
+  libgdk-pixbuf2.0-0 \
+  libglib2.0-0 \
+  libgtk-3-0 \
+  libnspr4 \
+  libpango-1.0-0 \
+  libx11-6 \
+  libx11-xcb1 \
+  libxcb1 \
+  libxcomposite1 \
+  libxcursor1 \
+  libxdamage1 \
+  libxext6 \
+  libxfixes3 \
+  libxi6 \
+  libxrandr2 \
+  libxrender1 \
+  libxss1 \
+  libxtst6 \
+  libnss3 \
+  lsb-release \
+  xdg-utils \
+  wget \
+  unzip
+sudo apt install -y libasound2t64
+sudo apt upgrade
+
+--- IN CASE YOU NEED TO COPY THE multiple.txt URLS FILE ---
+scp /Users/Usuario/Desktop/(carpeta)/itemdetail_craftedlinks.txt root@(droplet_ip):/root/itemdetail_craftedlinks.txt
+
+--- RUN DETACHED MODE --- 
+nohup node itemdetail_crawler.js > crawler.log 2>&1 &
+--- can review the progress inside droplet whenever you want
