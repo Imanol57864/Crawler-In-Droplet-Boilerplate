@@ -57,7 +57,7 @@ This boilerplate helps you run a detached crawler process on a droplet without d
 
 ---
 
-## ▶Run Crawler
+## Run Crawler
 
 ### Normal mode
 
